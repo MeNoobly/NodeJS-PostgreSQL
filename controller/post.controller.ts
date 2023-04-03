@@ -1,7 +1,8 @@
-import db from "../db.js";
+import db from "../db";
+import express from "express";
 
 class PostController {
-    async createPost(request, response) {
+    async createPost(request: express.Request, response: express.Response) {
         const { title, content, userID } = request.body;
         const newPost = await db.query(
             "INSERT INTO post (title, content, user_id) values ($1, $2, $3) RETURNING *",
@@ -10,7 +11,7 @@ class PostController {
         response.json(newPost.rows[0]);
     }
 
-    async getPostsByUser(request, response) {
+    async getPostsByUser(request: express.Request, response: express.Response) {
         const id = request.query.id;
         const posts = await db.query("SELECT * FROM post WHERE user_id = $1", [
             id,

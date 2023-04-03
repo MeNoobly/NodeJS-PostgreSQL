@@ -1,6 +1,6 @@
-import { Router } from "express";
-import postController from "../controller/post.controller.js";
-const router = new Router();
+import express from "express";
+import postController from "../controller/post.controller";
+const router = express();
 
 router.post("/post", postController.createPost);
 router.get("/post", postController.getPostsByUser);

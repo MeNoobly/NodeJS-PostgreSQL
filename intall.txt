@@ -1,2 +1,5 @@
 npm i express pg
 npm i -D nodemon
+npm i typescript
+npm i --save-dev @types/express
+npm i --save-dev @types/pg

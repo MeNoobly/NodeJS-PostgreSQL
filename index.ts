@@ -1,6 +1,6 @@
 import express from "express";
-import userRouter from "./routes/user.routes.js";
-import postRouter from "./routes/post.routes.js";
+import userRouter from "./routes/user.routes";
+import postRouter from "./routes/post.routes";
 
 const PORT = process.env.PORT || 8080;
 
